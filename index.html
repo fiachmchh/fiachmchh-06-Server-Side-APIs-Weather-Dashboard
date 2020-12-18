@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="weather.css">
+    
 </head>
 <body>
     
@@ -13,12 +14,10 @@
     <input type="submit" value="Submit" class='button'>
 </div>
 
-<div class="display row">
-
     <div class="current">
-        <h1 class="name"></h1>
+        <p class="name"></p>
         <p class="date"></p>
-        <div class="icon"></div>
+        <img class="icon">
         <p class="temp"></p>
         <p class="humid"></p>
         <p class="windsp"></p>
@@ -56,11 +55,8 @@
             <div class="temp"></div>
             <div class="humid"></div>
         </div>
-
     </div>
-
-</div>
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="weather.js"></script>
 </body>
 </html>
