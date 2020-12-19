@@ -5,26 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
 </head>
 <body>
-    
-<div class="input">
-    <input type="text" class="inputValue" placeholder="Enter a City">
-    <input type="submit" value="Submit" class='button'>
-</div>
 
-    <div class="current">
-        <p class="name"></p>
-        <p class="date"></p>
-        <img class="icon">
-        <p class="temp"></p>
-        <p class="humid"></p>
-        <p class="windsp"></p>
-        <div class="uvind"></div>
+
+ <div class="row">
+     <div class="col-md-1"></div>
+    <div class="input col-md-10">
+        <input type="text" class="inputValue" placeholder="Enter a City">
+        <input type="submit" value="Submit" class='button'>
     </div>
+    <div class="col-md-1"></div>
+ </div>   
 
-    <div class="future">
+<div class="row">
+    <div class="col-md-4">
+        <div class="places"></div>
+    </div>
+    <div class="col-md-8">
+        <div class="current">
+            <!-- <p class="name"></p>
+            <p class="date"></p>
+            <img class="icon">
+            <p class="temp"></p>
+            <p class="humid"></p>
+            <p class="windsp"></p>
+            <div class="uvind"></div> -->
+        </div>
+    </div>
+</div>
+    
+
+    <!-- <div class="future">
         <div class="day2">
             <div class="date"></div>
             <div class="icon"></div>
@@ -54,11 +68,10 @@
             <div class="icon"></div>
             <div class="temp"></div>
             <div class="humid"></div>
-        </div>
-    </div>
-    
+        </div> -->
+    <!-- </div> -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 <script src="weather.js"></script>
 </body>
 </html>

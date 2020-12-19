@@ -6,7 +6,7 @@ var inputValue = document.querySelector('.inputValue');
 
 $(".button").on("click", function() {
 
-    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=781431958b474e0ff56bb530277f295b';
+    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=metric&appid=781431958b474e0ff56bb530277f295b';
 
     $.ajax({
         url: queryURL,
@@ -18,9 +18,13 @@ $(".button").on("click", function() {
         var dateValue = data['list']['0']['dt_txt'];
         var iconValue = data['list']['0']['weather']['0'];
         var iconcode = iconValue.icon
+        var tempValue = data.list[0].main.temp
+        var humValue = data.list[0].main.humidity
+        var windValue = data.list[0].wind.speed
+        // var uviValue = data.list[0].
+    
 
-        console.log(nameValue)
-        console.log(dateValue)
+
 
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
@@ -28,22 +32,32 @@ $(".button").on("click", function() {
 
     img.attr('src', iconurl);
 
-    console.log('are we good ???',nameValue, dateValue, iconValue)
+    // console.log('are we good ???',nameValue, dateValue, iconValue, tempValue)
 
 
     var containerDiv = $('<div>');
     var text =$('<p>')
-        text.text(nameValue + ' ' + dateValue);
+        text.text(nameValue);
+    var temp =$('<p>')
+    temp.text(tempValue);
+    var date =$('<p>')
+    date.text(dateValue);
+    var humi =$('<p>')
+    humi.text(humValue);
+    var wind =$('<p>')
+    wind.text(windValue);
+
+ 
+        
         
     // dressthem how u want
 
     // 3 punch stick on page
     console.log('ABOUT OT STICK ON PAGE')
-    containerDiv.append(text, img)
-    $('.future').append(containerDiv)
+    containerDiv.append(img, text, temp, date, humi, wind)
+    
+    $('.current').append(containerDiv)
         
     })
 })
-
-
 
