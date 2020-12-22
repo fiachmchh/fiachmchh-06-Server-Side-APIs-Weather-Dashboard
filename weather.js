@@ -47,8 +47,8 @@ $(".button").on("click", function() {
 
     // 3 punch stick on page
     // console.log('ABOUT OT STICK ON PAGE')
+    $('.current').empty();
     containerDiv.append(img, text, temp, date, humi, wind)
-    
     $('.current').append(containerDiv)
         
     })
@@ -94,6 +94,7 @@ $(".5daybutton").on("click", function() {
 
     // 3 punch stick on page
     console.log('ABOUT OT STICK ON PAGE')
+    $('.day2').empty();
     containerDiv.append(img, temp, date, humi)
     
     $('.day2').append(containerDiv)
@@ -141,6 +142,7 @@ $(".5daybutton").on("click", function() {
 
     // 3 punch stick on page
     console.log('ABOUT OT STICK ON PAGE')
+    $('.day3').empty();
     containerDiv.append(img, temp, date, humi)
     
     $('.day3').append(containerDiv)
@@ -188,6 +190,7 @@ $(".5daybutton").on("click", function() {
 
     // 3 punch stick on page
     console.log('ABOUT OT STICK ON PAGE')
+    $('.day4').empty();
     containerDiv.append(img, temp, date, humi)
     
     $('.day4').append(containerDiv)
@@ -235,6 +238,7 @@ $(".5daybutton").on("click", function() {
 
     // 3 punch stick on page
     console.log('ABOUT OT STICK ON PAGE')
+    $('.day5').empty();
     containerDiv.append(img, temp, date, humi)
     
     $('.day5').append(containerDiv)
