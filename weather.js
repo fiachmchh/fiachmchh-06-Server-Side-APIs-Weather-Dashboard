@@ -62,19 +62,24 @@ $(".button").on("click", function() {
     var text =$('<p>')
         text.text(nameValue);
     var temp =$('<p>')
-    temp.text(tempValue);
+    temp.text(tempValue +' degrees Celsius');
     var date =$('<p>')
     date.text(dateValue);
     var humi =$('<p>')
-    humi.text(humValue);
+    humi.text('humidity : ' + humValue);
     var wind =$('<p>')
-    wind.text(windValue);
+    wind.text('windspeed : ' + windValue + ' mph');
    
     // dressthem how u want
 
     // 3 punch stick on page
     // console.log('ABOUT OT STICK ON PAGE')
+
     $('.current').empty();
+    $('.day2').empty();
+    $('.day3').empty();
+    $('.day4').empty();
+    $('.day5').empty();
     containerDiv.append(img, text, temp, date, humi, wind)
     $('.current').append(containerDiv)
         
@@ -109,19 +114,19 @@ $(".5daybutton").on("click", function() {
     var containerDiv = $('<div>');
     
     var temp =$('<p>')
-    temp.text(tempValue);
+    temp.text(tempValue +' degrees Celsius');
     
     var date =$('<p>')
     date.text(dateValue);
 
     var humi =$('<p>')
-    humi.text(humValue);
+    humi.text('humidity : ' + humValue);
         
     // dressthem how u want
 
     // 3 punch stick on page
     console.log('ABOUT OT STICK ON PAGE')
-    $('.day2').empty();
+    
     containerDiv.append(img, temp, date, humi)
     
     $('.day2').append(containerDiv)
@@ -157,19 +162,19 @@ $(".5daybutton").on("click", function() {
     var containerDiv = $('<div>');
     
     var temp =$('<p>')
-    temp.text(tempValue);
+    temp.text(tempValue +' degrees Celsius');
     
     var date =$('<p>')
     date.text(dateValue);
 
     var humi =$('<p>')
-    humi.text(humValue);
+    humi.text('humidity : ' + humValue);
         
     // dressthem how u want
 
     // 3 punch stick on page
     console.log('ABOUT OT STICK ON PAGE')
-    $('.day3').empty();
+    
     containerDiv.append(img, temp, date, humi)
     
     $('.day3').append(containerDiv)
@@ -205,19 +210,19 @@ $(".5daybutton").on("click", function() {
     var containerDiv = $('<div>');
     
     var temp =$('<p>')
-    temp.text(tempValue);
+    temp.text(tempValue +' degrees Celsius');
     
     var date =$('<p>')
     date.text(dateValue);
 
     var humi =$('<p>')
-    humi.text(humValue);
+    humi.text('humidity : ' + humValue);
         
     // dressthem how u want
 
     // 3 punch stick on page
     console.log('ABOUT OT STICK ON PAGE')
-    $('.day4').empty();
+    
     containerDiv.append(img, temp, date, humi)
     
     $('.day4').append(containerDiv)
@@ -253,19 +258,19 @@ $(".5daybutton").on("click", function() {
     var containerDiv = $('<div>');
     
     var temp =$('<p>')
-    temp.text(tempValue);
+    temp.text(tempValue +' degrees Celsius');
     
     var date =$('<p>')
     date.text(dateValue);
 
     var humi =$('<p>')
-    humi.text(humValue);
+    humi.text('humidity : ' + humValue);
         
     // dressthem how u want
 
     // 3 punch stick on page
     console.log('ABOUT OT STICK ON PAGE')
-    $('.day5').empty();
+    
     containerDiv.append(img, temp, date, humi)
     
     $('.day5').append(containerDiv)

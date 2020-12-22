@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     background-color: lightgrey;
+    text-align: center;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 input[type="text"] {
     height: 50px;
     width: 600px;
-    background: lightblue;
+    background-color: lightslategray;
     font-family: sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -30,7 +31,7 @@ input[type="text"] {
 input[type="submit"] {
     height: 50px;
     width: 100px;
-    background: lightblue;
+    background-color: lightslategray;
     font-family: sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -42,13 +43,3 @@ input[type="submit"] {
     text-align: center;
 }
 
-.container {
-    height: 50px;
-    width: 100px;
-    background: lightblue;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    border: none;
-    border-radius: 2px;
-}
