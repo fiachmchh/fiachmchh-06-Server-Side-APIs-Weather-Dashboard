@@ -1,13 +1,13 @@
 var button = document.querySelector('.button');
 var inputValue = document.querySelector('.inputValue');
-// var name = document.querySelector('.name');
-// var date = document.querySelector('.date');
-// var icon = document.querySelector('.icon');
+
+
+
 
 $(".button").on("click", function() {
 
-    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=metric&appid=781431958b474e0ff56bb530277f295b';
-
+    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=781431958b474e0ff56bb530277f295b';
+    
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -24,7 +24,7 @@ $(".button").on("click", function() {
     // dressthem how u want
 
     // 3 punch stick on page
-    // console.log('ABOUT OT STICK ON PAGE')
+    
     containerDiv.append(text)
     $('.places').append(containerDiv)
         
@@ -33,14 +33,18 @@ $(".button").on("click", function() {
 
 $(".button").on("click", function() {
 
-    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=metric&appid=781431958b474e0ff56bb530277f295b';
+    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=781431958b474e0ff56bb530277f295b';
+
+    console.log(queryURL)
+   
+
 
     $.ajax({
         url: queryURL,
         method: "GET"
     })
 
-    .then(function(data) {
+    .then(function (data) {
         var nameValue = data.city.name
         var dateValue = data.list[0].dt_txt;
         var iconValue = data.list[0].weather[0];
@@ -56,7 +60,6 @@ $(".button").on("click", function() {
         
         img.attr('src', iconurl);
 
-    // console.log('are we good ???',nameValue, dateValue, iconValue, tempValue)
 
     var containerDiv = $('<div>');
     var text =$('<p>')
@@ -70,11 +73,7 @@ $(".button").on("click", function() {
     var wind =$('<p>')
     wind.text('windspeed : ' + windValue + ' mph');
    
-    // dressthem how u want
-
-    // 3 punch stick on page
-    // console.log('ABOUT OT STICK ON PAGE')
-
+    
     $('.current').empty();
     $('.day2').empty();
     $('.day3').empty();
@@ -86,195 +85,98 @@ $(".button").on("click", function() {
     })
 })
 
-$(".5daybutton").on("click", function() {
-
-    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=metric&appid=781431958b474e0ff56bb530277f295b';
-
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-
-    .then(function(data) {
-        var dateValue = data.list[1].dt_txt;
-        var iconValue = data.list[1].weather[0];
-        var iconcode = iconValue.icon
-        var tempValue = data.list[1].main.temp
-        var humValue = data.list[1].main.humidity
-        
-        var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-
-        var img = $('<img>')
-
-    img.attr('src', iconurl);
-
-    // console.log('are we good ???',nameValue, dateValue, iconValue, tempValue)
 
 
-    var containerDiv = $('<div>');
-    
-    var temp =$('<p>')
-    temp.text(tempValue +' degrees Celsius');
-    
-    var date =$('<p>')
-    date.text(dateValue);
 
-    var humi =$('<p>')
-    humi.text('humidity : ' + humValue);
-        
-    // dressthem how u want
+$(".5daybutton").on("click", function () {
 
-    // 3 punch stick on page
-    console.log('ABOUT OT STICK ON PAGE')
-    
-    containerDiv.append(img, temp, date, humi)
-    
-    $('.day2').append(containerDiv)
-        
-    })
-})
-
-$(".5daybutton").on("click", function() {
-
-    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=metric&appid=781431958b474e0ff56bb530277f295b';
+    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=781431958b474e0ff56bb530277f295b';
 
     $.ajax({
         url: queryURL,
         method: "GET"
     })
 
-    .then(function(data) {
-        var dateValue = data.list[2].dt_txt;
-        var iconValue = data.list[2].weather[0];
-        var iconcode = iconValue.icon
-        var tempValue = data.list[2].main.temp
-        var humValue = data.list[2].main.humidity
+    .then(function (data) {
+
+        for (let i = 8; i <= 32 ; i += 8) {
+         var dateValue = data.list[i].dt_txt;
+            var iconValue = data.list[i].weather[0];
+            var iconcode = iconValue.icon;
+            var tempValue = data.list[i].main.temp;
+            var humValue = data.list[i].main.humidity;
+
+            var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+
+            var img = $('<img>')
+    
+        img.attr('src', iconurl);
+    
+        var containerDiv = $('<div>');
         
-        var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-
-        var img = $('<img>')
-
-    img.attr('src', iconurl);
-
-    // console.log('are we good ???',nameValue, dateValue, iconValue, tempValue)
-
-
-    var containerDiv = $('<div>');
-    
-    var temp =$('<p>')
-    temp.text(tempValue +' degrees Celsius');
-    
-    var date =$('<p>')
-    date.text(dateValue);
-
-    var humi =$('<p>')
-    humi.text('humidity : ' + humValue);
+        var temp =$('<p>')
+        temp.text(tempValue +' degrees Celsius');
         
-    // dressthem how u want
-
-    // 3 punch stick on page
-    console.log('ABOUT OT STICK ON PAGE')
+        var date =$('<p>')
+        date.text(dateValue);
     
-    containerDiv.append(img, temp, date, humi)
-    
-    $('.day3').append(containerDiv)
+        var humi =$('<p>')
+        humi.text('humidity : ' + humValue);
+            
         
-    })
-})
+        containerDiv.append(img, temp, date, humi)
 
-$(".5daybutton").on("click", function() {
+        console.log(i)
+        console.log(dateValue = data.list[i].dt_txt)
+        console.log(iconValue = data.list[i].weather[0])
+        console.log(tempValue = data.list[i].main.temp)
+        console.log(humValue = data.list[i].main.humidity)
 
-    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=metric&appid=781431958b474e0ff56bb530277f295b';
+        // $('.day2').append(containerDiv);
+        $('.day3').append(containerDiv);
+        // $('.day4').append(containerDiv);
+        // $('.day5').append(containerDiv);
+            
+        };
+ });
+});
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
+// $(".5daybutton").on("click", function() {
 
-    .then(function(data) {
-        var dateValue = data.list[3].dt_txt;
-        var iconValue = data.list[3].weather[0];
-        var iconcode = iconValue.icon
-        var tempValue = data.list[3].main.temp
-        var humValue = data.list[3].main.humidity
+//     var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=metric&appid=781431958b474e0ff56bb530277f295b';
+
+//     $.ajax({
+//         url: queryURL,
+//         method: "GET"
+//     })
+
+//     .then(function(data) {
+//         var dateValue = data.list[16].dt_txt;
+//         var iconValue = data.list[16].weather[0];
+//         var iconcode = iconValue.icon
+//         var tempValue = data.list[16].main.temp
+//         var humValue = data.list[16].main.humidity
         
-        var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+//         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
-        var img = $('<img>')
+//         var img = $('<img>')
 
-    img.attr('src', iconurl);
+//     img.attr('src', iconurl);
 
-    // console.log('are we good ???',nameValue, dateValue, iconValue, tempValue)
-
-
-    var containerDiv = $('<div>');
+//     var containerDiv = $('<div>');
     
-    var temp =$('<p>')
-    temp.text(tempValue +' degrees Celsius');
+//     var temp =$('<p>')
+//     temp.text(tempValue +' degrees Celsius');
     
-    var date =$('<p>')
-    date.text(dateValue);
+//     var date =$('<p>')
+//     date.text(dateValue);
 
-    var humi =$('<p>')
-    humi.text('humidity : ' + humValue);
+//     var humi =$('<p>')
+//     humi.text('humidity : ' + humValue);
+    
+//     containerDiv.append(img, temp, date, humi)
+    
+//     $('.day3').append(containerDiv)
         
-    // dressthem how u want
-
-    // 3 punch stick on page
-    console.log('ABOUT OT STICK ON PAGE')
-    
-    containerDiv.append(img, temp, date, humi)
-    
-    $('.day4').append(containerDiv)
-        
-    })
-})
-
-$(".5daybutton").on("click", function() {
-
-    var queryURL = 'http://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&units=metric&appid=781431958b474e0ff56bb530277f295b';
-
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-
-    .then(function(data) {
-        var dateValue = data.list[4].dt_txt;
-        var iconValue = data.list[4].weather[0];
-        var iconcode = iconValue.icon
-        var tempValue = data.list[4].main.temp
-        var humValue = data.list[4].main.humidity
-        
-        var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-
-        var img = $('<img>')
-
-    img.attr('src', iconurl);
-
-    // console.log('are we good ???',nameValue, dateValue, iconValue, tempValue)
-
-
-    var containerDiv = $('<div>');
-    
-    var temp =$('<p>')
-    temp.text(tempValue +' degrees Celsius');
-    
-    var date =$('<p>')
-    date.text(dateValue);
-
-    var humi =$('<p>')
-    humi.text('humidity : ' + humValue);
-        
-    // dressthem how u want
-
-    // 3 punch stick on page
-    console.log('ABOUT OT STICK ON PAGE')
-    
-    containerDiv.append(img, temp, date, humi)
-    
-    $('.day5').append(containerDiv)
-        
-    })
-})
-
+//     })
+// })
