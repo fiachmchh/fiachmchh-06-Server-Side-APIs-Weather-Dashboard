@@ -147,4 +147,3 @@ $(".5daybutton").on("click", function fiveDay () {
  });
 });
 
-

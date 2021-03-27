@@ -11,6 +11,5 @@ When the user searches a new city, the previous cities which were searched are l
 
 https://fiachmchh.github.io/fiachmchh-06-Server-Side-APIs-Weather-Dashboard/
 
-https://github.com/fiachmchh/fiachmchh-06-Server-Side-APIs-Weather-Dashboard
 
 
